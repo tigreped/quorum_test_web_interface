@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Page</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Your HTML content goes here -->
+    <div class="container">
+    <h2>Legislator Count</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Support(Pros)</th>
+                <th>Oppose(Cons)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for legislator in legislators %}
+            <tr>
+                <td>Legislator: {{ legislator.id }}</td>
+                <td>Pros: {{ legislator.pros }}</td>
+                <td>Cons: {{ legislator.cons }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Bills Count</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Pros</th>
+                <th>Cons</th>
+                <th>Primary Sponsor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bill in bills %}
+            <tr>
+                <td>{{ bill.id }}</td>
+                <td>{{ bill.pros }}</td>
+                <td>{{ bill.cons }}</td>
+                <td>{{ bill.primary_sponsor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

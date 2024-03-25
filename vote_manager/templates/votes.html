@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vote Page</title>
+    <title>Qurum test - Vote Page - Legislators and Bills</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Your HTML content goes here -->
+    <!-- Table with results -->
     <div class="container">
-    <h2>Legislator Count</h2>
+    <h2>Legislator votes count</h2>
+    <h4>1. For every legislator available, how many bills did the legislator support (voted for the bill)? How many bills did the legislator oppose (voted against)?</h4>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Support(Pros)</th>
-                <th>Oppose(Cons)</th>
+                <th>Legislator ID</th>
+                <th>Name</th>
+                <th>Support (For)</th>
+                <th>Oppose (Against)</th>
             </tr>
         </thead>
         <tbody>
             {% for legislator in legislators %}
             <tr>
-                <td>Legislator: {{ legislator.id }}</td>
-                <td>Pros: {{ legislator.pros }}</td>
-                <td>Cons: {{ legislator.cons }}</td>
+                <td>{{ legislator.id }}</td>
+                <td>{{ legislator.name }}</td>
+                <td>{{ legislator.pros }}</td>
+                <td>{{ legislator.cons }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <h2>Bills Count</h2>
+    <h2>Bill vote count</h2>
+    <h4>2. For every bill available, how many legislators supported the bill? How many legislators opposed the bill? Who was the primary sponsor of the bill?</h4>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Pros</th>
-                <th>Cons</th>
+                <th>BILL ID</th>
+                <th>Support (For)</th>
+                <th>Oppose (Against)</th>
                 <th>Primary Sponsor</th>
             </tr>
         </thead>
